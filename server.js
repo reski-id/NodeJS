@@ -7,9 +7,11 @@ const todos=[
 ];
 
 const server = http.createServer((req, res)=>{
-    res.setHeader('Content-Type', 'application/json');
-    res.setHeader('X-poweredBy', 'NodeJS');
-  
+    res.writeHead(200, {
+        'Content-Type': 'application/json',
+        'X-poweredBy': 'NodeJS'
+    })
+
     res.end(
         JSON.stringify({
         success:true,
